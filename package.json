@@ -4,5 +4,28 @@
   "description": "Pythonic way of logging for JavaScript",
   "main": "lib/main.js",
   "author": "Royal Pinto <royalpinto@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "eslintConfig": {
+    "extends": "google",
+    "rules": {
+      "comma-dangle": [
+        2,
+        "always-multiline"
+      ],
+      "no-multiple-empty-lines": [
+        2,
+        {
+          "max": 2,
+          "maxEOF": 1
+        }
+      ],
+      "indent": [
+        2,
+        4,
+        {
+          "SwitchCase": 1
+        }
+      ]
+    }
+  }
 }
