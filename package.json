@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Pythonic way of logging for JavaScript",
   "main": "lib/main.js",
+  "scripts": {
+      "test": "nodeunit test"
+  },
   "devDependencies": {
     "nodeunit": "^0.9.1"
   },
