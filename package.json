@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Pythonic way of logging for JavaScript",
   "main": "lib/main.js",
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
+  },
   "author": "Royal Pinto <royalpinto@gmail.com>",
   "license": "MIT",
   "eslintConfig": {
