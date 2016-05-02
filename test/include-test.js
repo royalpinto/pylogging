@@ -25,7 +25,7 @@ exports.includeTest = function(test) {
             require('../lib/main.js');
         },
         Error,
-        'Failed to import cares.'
+        'Failed to import pylogging.'
     );
 
     test.done();
