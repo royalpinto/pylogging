@@ -30,3 +30,50 @@ exports.includeTest = function(test) {
 
     test.done();
 };
+
+
+exports.checkLibFields = function(test) {
+    var logging = require('../lib/main.js');
+    test.ok(logging.getLogger);
+
+    test.ok(logging.setLoggerClass);
+    test.ok(logging.setLogRecordClass);
+
+    test.ok(logging.Logger);
+    test.ok(logging.Handler);
+    test.ok(logging.ConsoleHandler);
+    test.ok(logging.Filter);
+    test.ok(logging.Formatter);
+
+    test.ok(logging.CRITICAL);
+    test.ok(logging.ERROR);
+    test.ok(logging.EXCEPTION);
+    test.ok(logging.WARNING);
+    test.ok(logging.WARN);
+    test.ok(logging.INFO);
+    test.ok(logging.DEBUG);
+    test.ok(logging.NOTSET !== undefined);
+
+    test.ok(logging instanceof logging.Logger);
+    test.ok(logging.getLogger instanceof Function);
+
+    test.ok(logging.setLoggerClass instanceof Function);
+    test.ok(logging.setLogRecordClass instanceof Function);
+
+    test.ok(logging.Logger instanceof Function);
+    test.ok(logging.Handler instanceof Function);
+    test.ok(logging.ConsoleHandler instanceof Function);
+    test.ok(logging.Filter instanceof Function);
+    test.ok(logging.Formatter instanceof Function);
+
+    test.ok(logging.CRITICAL === 50);
+    test.ok(logging.ERROR === 40);
+    test.ok(logging.EXCEPTION === 40);
+    test.ok(logging.WARNING === 30);
+    test.ok(logging.WARN === 30);
+    test.ok(logging.INFO === 20);
+    test.ok(logging.DEBUG === 10);
+    test.ok(logging.NOTSET === 0);
+
+    test.done();
+};
