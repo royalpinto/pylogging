@@ -4,7 +4,8 @@
   "description": "Pythonic way of logging for JavaScript",
   "main": "lib/main.js",
   "scripts": {
-    "test": "nodeunit test"
+    "test": "nodeunit test",
+    "docs": "jsdoc2md lib/*.js > API.md"
   },
   "devDependencies": {
     "jsdoc-to-markdown": "^1.3.6",
