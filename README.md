@@ -21,6 +21,10 @@ using `npm`:
 npm install pylogging
 ```
 
+Documentation
+------
+[https://github.com/royalpinto/pylogging/tree/master/API.md][3]
+
 Examples
 ------
 
@@ -66,3 +70,4 @@ For more examples and advance usage visit [examples][2]
 
 [1]: http://docs.python.org/2/library/logging.html
 [2]: https://github.com/royalpinto/pylogging/tree/master/examples
+[3]: https://github.com/royalpinto/pylogging/tree/master/API.md
