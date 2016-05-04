@@ -9,6 +9,7 @@
   "main": "lib/main.js",
   "scripts": {
     "test": "nodeunit test",
+    "lint": "eslint .",
     "docs": "jsdoc2md lib/*.js > API.md"
   },
   "devDependencies": {
