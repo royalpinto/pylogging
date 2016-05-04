@@ -2,6 +2,10 @@
   "name": "pylogging",
   "version": "1.0.0",
   "description": "Pythonic way of logging for JavaScript",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/royalpinto/pylogging.git"
+  },
   "main": "lib/main.js",
   "scripts": {
     "test": "nodeunit test",
