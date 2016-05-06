@@ -45,3 +45,30 @@ exports.withoutArgs = function(test) {
 
     test.done();
 };
+
+
+exports.withArgs = function(test) {
+    var TestHandler = function() {
+        logging.Handler.call(this);
+    };
+
+    util.inherits(TestHandler, logging.Handler);
+
+    TestHandler.prototype.emit = function(record) {
+        test.ok(record.excInfo === undefined);
+        test.strictEqual(record.getMessage(),
+            util.format('With args %s %s %s...', 'foo'));
+    };
+
+    var handler = new TestHandler();
+    handler.setLevel(logging.INFO);
+
+    var logger = logging.getLogger('pylogging.test.withArgs');
+    logger.setLevel(logging.INFO);
+    logger.addHandler(handler);
+
+    logger.warn('With args %s %s %s...', 'foo');
+
+    test.done();
+};
+
