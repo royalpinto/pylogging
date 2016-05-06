@@ -72,3 +72,30 @@ exports.withArgs = function(test) {
     test.done();
 };
 
+
+exports.withExtraArgs = function(test) {
+    var TestHandler = function() {
+        logging.Handler.call(this);
+    };
+
+    util.inherits(TestHandler, logging.Handler);
+
+    TestHandler.prototype.emit = function(record) {
+        test.ok(record.excInfo === undefined);
+        test.strictEqual(record.getMessage(),
+            util.format('With args %s %s %s...', 'foo'));
+        test.ok(record.statusCode);
+        test.strictEqual(record.statusCode, 200);
+    };
+
+    var handler = new TestHandler();
+    handler.setLevel(logging.INFO);
+
+    var logger = logging.getLogger('pylogging.test.withExtraArgs');
+    logger.setLevel(logging.INFO);
+    logger.addHandler(handler);
+
+    logger.warn('With args %s %s %s...', 'foo', {extra: {statusCode: 200}});
+
+    test.done();
+};
